@@ -5,24 +5,39 @@
   <meta charset="UTF-8">
   <h2><title>Predict Heart Diseases</title></h2>
 
-  <!-- <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
 
 </head>
 <center>
-	 <style>
-body {
-  background-image: url('cardiologist-india.jpg');
-  background-repeat: no-repeat;
+<style >
+  body {background-color: #8a00e6;
+    }
+  h1 {color: black;}
+  k {color: white;}
+  h2 {color:  #990033;}
+  x {color: black;}
+.button {
+  background-color: #3333ff;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
+
 </style>
 <body>
-  {{ prediction_text }}  
+  <h2>{{ prediction_text }}</h2>  
 
-      <h2>Predict Heart Diseases</h2>
+      <h1>Predict Heart Diseases</h1>
  <div class="login">
   
    <!-- Main Input For Receiving Query to our ML -->
@@ -30,8 +45,9 @@ body {
       <!-- <input type="number" name="area_type" placeholder="area_type" required="required" /> -->
      
 
-    age:<br>
-  <input type="text" name="age" placeholder="age" required="required" /><br>
+    <x style="font-size:30px;">age</x><br>
+  <input type="text" style="width: 400px; height: 20px;" name="age" placeholder="Enter your age" required="required" /><br>
+  <!-- <select name="age"  style="width: 400px;height: 31px;">
 <!-- <select name="age"  style="width: 400px;height: 31px;">
               
               <option  value="1.000000">1</option>
@@ -137,13 +153,18 @@ body {
           </select>
           <br>-->
 
-    sex<br>
-    <input type="text" name="sex" placeholder="sex" required="required" /><br>
+    <x style="font-size:30px;">sex</x><br>
+    <!-- <input style="width: 400px; height: 20px;" type="text" name="sex" placeholder=" Enter your sex" required="required" /><br> -->
+    <select name="sex"  style="width: 410px; height: 27px;">
+        <option  value="1">Male</option>
+        <option  value="2">Female</option>
+      </select>
+      <br>
 
-    cp<br>
-    <input type="text" name="cp" placeholder="cp" required="required" /><br>
-    trestbps<br>
-    <input type="text" name="trestbps" placeholder="trestbps" required="required" /><br>
+    <x style="font-size:30px;">cp</x><br>
+    <input style="width: 400px; height: 20px;" type="text" name="cp" placeholder="Enter your cp" required="required" /><br>
+    <x style="font-size:30px;">trestbps</x><br>
+    <input style="width: 400px; height: 20px;" type="text" name="trestbps" placeholder="Enter your trestbps" required="required" /><br>
     <!-- <select style="width: 400px;height: 31px;">
 
 			  <option  value="0.471698">90</option>
@@ -259,18 +280,18 @@ body {
               <option  value="0.330189">200</option>
    </select>            -->
 
-    chol<br>
-    <input type="text" name="chol" placeholder="chol" required="required" /><br>
-    fbs<br>
-    <input type="text" name="fbs" placeholder="fbs" required="required" /><br>
-    restecg<br>
-    <input type="text" name="restecg" placeholder="restecg" required="required" /><br>
-    thalach<br>
-    <input type="text" name="thalach" placeholder="thalach" required="required" /><br>
-    exang<br>
-    <input type="text" name="exang" placeholder="exang" required="required" /><br>
-    old peak<br>
-    <input type="text" name="old peak" placeholder="old peak" required="required" /><br>
+    <x style="font-size:30px;"> chol </x><br>
+    <input style="width: 400px; height: 20px;" style="width: 400px; height: 20px;" type="text" name="chol" placeholder="Enter your chol" required="required" /><br>
+    <x style="font-size:30px;">fbs</x><br>
+    <input style="width: 400px; height: 20px;" style="width: 400px; height: 20px;" type="text" name="fbs" placeholder="Enter your fbs" required="required" /><br>
+    <x style="font-size:30px;">restecg</x><br>
+    <input style="width: 400px; height: 20px;" type="text" name="restecg" placeholder="Enter your restecg" required="required" /><br>
+    <x style="font-size:30px;">thalach</x><br>
+    <input style="width: 400px; height: 20px;" type="text" name="thalach" placeholder="Enter your thalach" required="required" /><br>
+    <x style="font-size:30px;">exang</x><br>
+    <input style="width: 400px; height: 20px;" type="text" name="exang" placeholder="Enter your exang" required="required" /><br>
+    <x style="font-size:30px;">old peak</x><br>
+    <input style="width: 400px; height: 20px;" type="text" name="old peak" placeholder="Enter your old peak" required="required" /><br>
     <!-- <select style="width: 400px;height: 31px;">
 
 			  <option  value="0.000000">0.0</option>
@@ -346,16 +367,16 @@ body {
               <option  value="0.903226">6.9</option>
               <option  value="0.903226">7.0</option>
      </select> -->
-    slope<br>
-    <input type="text" name="slope" placeholder="slope" required="required" /><br>
-    ca<br>
-    <input type="text" name="ca" placeholder="ca" required="required" /><br>
-    thal<br>
-    <input type="text" name="thal" placeholder="thal" required="required" /><br><br>
+    <x style="font-size:30px;">slope</x><br>
+    <input style="width: 400px; height: 20px;" type="text" name="slope" placeholder="Enter your slope" required="required" /><br>
+    <x style="font-size:30px;">ca</x><br>
+    <input  style="width: 400px; height: 20px;" type="text" name="ca" placeholder="Enter your ca" required="required" /><br>
+    <x style="font-size:30px;">thal</x><br>
+    <input style="width: 400px; height: 20px;" type="text" name="thal" placeholder="Enter your thal" required="required" /><br><br>
     
 
-
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+<!-- <button class="button">Button</button> -->
+        <button class="button" type="submit" ><k>Predict</k></button>
     </form>
 
  </div>
